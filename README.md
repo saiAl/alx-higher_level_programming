@@ -7,3 +7,6 @@
 
 ### Projects:
 
+[0x00-python-hello_world](https://github.com/saiAl/alx-higher_level_programming/tree/main/0x00-python-hello_world "0x00-python-hello_world")
+
+------------
