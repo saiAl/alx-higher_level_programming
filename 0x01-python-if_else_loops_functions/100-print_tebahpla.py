@@ -12,5 +12,5 @@ while (ch > 96):
     else:
         letter = ch
 
-    print(chr(letter), end='')
+    print("{:s}".format(chr(letter)), end='')
     ch -= 1
