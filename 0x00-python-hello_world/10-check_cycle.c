@@ -10,8 +10,8 @@ int check_cycle(listint_t *list)
 {
 	listint_t *current, *prev;
 
-	if (!list)
-		return (NULL);
+	if (list == NULL)
+		return (0);
 
 	current = list;
 	prev = current;
