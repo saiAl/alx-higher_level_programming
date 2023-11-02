@@ -1,16 +1,18 @@
 #!/usr/bin/python3
 
-import sys
 
-if len(sys.argv) <= 1:
-    print("0 arguments.")
-else:
-    length = len(sys.argv) - 1
-    if length > 1:
-        print("{:d} arguments:".format(length))
+if __name__ = "__main__":
+    import sys
+    
+    if len(sys.argv) <= 1:
+        print("0 arguments.")
     else:
-        print("{:d} argument:".format(length))
+        length = len(sys.argv) - 1
+        if length > 1:
+            print("{:d} arguments:".format(length))
+        else:
+            print("{:d} argument:".format(length))
 
-    for idx, value in enumerate(sys.argv):
-        if idx >= 1:
-            print("{:d}: {:s}".format(idx, value))
+        for idx, value in enumerate(sys.argv):
+            if idx >= 1:
+                print("{:d}: {:s}".format(idx, value))
