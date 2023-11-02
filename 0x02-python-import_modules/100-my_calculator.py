@@ -15,13 +15,13 @@ if __name__ == "__main__":
     res = 0
 
     if op == '+':
-        res = a + b
+        res = (a + b)
     elif op == '-':
-        res = a - b
+        res = (a - b)
     elif op == '*':
-        res = a * b
+        res = (a * b)
     elif op == '/':
-        res = a / b
+        res = (a / b)
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
