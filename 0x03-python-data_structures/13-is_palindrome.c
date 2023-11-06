@@ -13,7 +13,12 @@ int is_palindrome(listint_t **head)
 	int count, i = 0, j;
 	listint_t *next, *prev;
 
+	if (!head)
+		return (1);
+
 	count = counter(head);
+	if (count == 0)
+		return (1);
 
 	while (*head)
 	{
