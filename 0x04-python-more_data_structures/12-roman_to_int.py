@@ -24,7 +24,7 @@ def roman_to_int(roman_string):
     for n in numbers:
         integers += n
 
-    return int(integers)
+    return str(integers)
 
 
 def convert_int(word=""):
