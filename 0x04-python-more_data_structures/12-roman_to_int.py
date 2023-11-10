@@ -10,6 +10,9 @@ def roman_to_int(roman_string):
             return the integer
     """
 
+    if type(roman_string) != str or roman_string is None:
+        return None
+
     integers = 0
 
     roman_list = word_list(roman_string)
@@ -20,7 +23,7 @@ def roman_to_int(roman_string):
     for n in numbers:
         integers += n
 
-    return integers
+    return int(integers)
 
 
 def convert_int(word=""):
