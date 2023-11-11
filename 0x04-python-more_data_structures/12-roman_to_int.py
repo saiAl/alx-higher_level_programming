@@ -81,8 +81,7 @@ def word_list(s=""):
     if length <= 4:
         values.append(s)
     else:
-        match length:
-            case 5:
+        if length == 5:
                 for i in range(0, length - start):
                     word += s[i]
                 values.append(word)
@@ -90,7 +89,7 @@ def word_list(s=""):
                 for i in range(1 + start, length):
                     word += s[i]
                 values.append(word)
-            case 7:
+            elif length == 7:
                 for i in range(0, length - start):
                     word += s[i]
                 values.append(word)
@@ -98,7 +97,7 @@ def word_list(s=""):
                 for i in range(1 + start, length):
                     word += s[i]
                 values.append(word)
-            case _:
+            else:
                 for i in range(0, length - start):
                     word += s[i]
                 values.append(word)
