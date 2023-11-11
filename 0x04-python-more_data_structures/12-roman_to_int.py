@@ -24,7 +24,7 @@ def roman_to_int(roman_string):
     for n in numbers:
         integers += n
 
-    return str(integers)
+    return int(integers)
 
 
 def convert_int(word=""):
@@ -50,12 +50,11 @@ def convert_int(word=""):
     while idx < 4:
         for key, value in dicts[idx].items():
             if word == key:
-                match idx:
-                    case 1:
+                if idx == 1:
                         mul = 10
-                    case 2:
+                elif idx == 2:
                         mul = 100
-                    case 3:
+                elif idx == 3:
                         mul = 1000
                 res = int(dicts[idx][key]) * mul
                 ints.append(res)
@@ -99,7 +98,6 @@ def word_list(s=""):
                 for i in range(1 + start, length):
                     word += s[i]
                 values.append(word)
-
             case _:
                 for i in range(0, length - start):
                     word += s[i]
