@@ -89,7 +89,7 @@ def word_list(s=""):
                 for i in range(1 + start, length):
                     word += s[i]
                 values.append(word)
-            elif length == 7:
+        elif length == 7:
                 for i in range(0, length - start):
                     word += s[i]
                 values.append(word)
@@ -97,12 +97,12 @@ def word_list(s=""):
                 for i in range(1 + start, length):
                     word += s[i]
                 values.append(word)
-            else:
-                for i in range(0, length - start):
-                    word += s[i]
-                values.append(word)
-                word = ""
-                for i in range(start, length):
-                    word += s[i]
-                values.append(word)
+        else:
+            for i in range(0, length - start):
+                word += s[i]
+            values.append(word)
+            word = ""
+            for i in range(start, length):
+                word += s[i]
+            values.append(word)
     return values
