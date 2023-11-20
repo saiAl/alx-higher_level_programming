@@ -4,11 +4,13 @@ def safe_print_division(a, b):
     try:
         res = float()
         if (b == 0):
-            res = None
+            raise Exception
             return None
         else:
             res = (a / b)
             return res
+    except Exception:
+        res = None
     finally:
         if res is None:
             print("Inside result: None")
