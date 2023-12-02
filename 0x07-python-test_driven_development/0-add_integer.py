@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
 """
-    0. Integers addition 
+    0. Integers addition
 """
+
 
 def add_integer(a, b=98):
     """
@@ -21,4 +22,7 @@ def add_integer(a, b=98):
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
 
-    return int(a) + int(b)
+    a = int(a)
+    b = int(b)
+
+    return a + b
