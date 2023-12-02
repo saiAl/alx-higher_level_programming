@@ -23,3 +23,12 @@ TypeError: a must be an integer
 Traceback (most recent call last):
 	. . .
 TypeError: add_integer() missing 1 required positional argument: 'a'
+
+>>> add_integer(3.14, 2.71)
+5
+>>> add_integer(1e100, 1e100)
+Traceback (most recent call last):
+	. . .
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(2)
+100
