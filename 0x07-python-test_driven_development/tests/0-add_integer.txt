@@ -26,7 +26,7 @@ TypeError: add_integer() missing 1 required positional argument: 'a'
 
 >>> add_integer(3.14, 2.71)
 5
->>> add_integer(1e100, 1e100)
+>>> add_integer(1e100, 1e100000000000)
 Traceback (most recent call last):
 	. . .
 OverflowError: cannot convert float infinity to integer
