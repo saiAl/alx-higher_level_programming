@@ -30,4 +30,3 @@ class Student:
                 if key in attrs:
                     new[key] = value
             return new
-                        
