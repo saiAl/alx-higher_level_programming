@@ -1,8 +1,6 @@
 #!/usr/bin/python
 
-"""
-    Module 0-read_file.py
-"""
+""" Module 0-read_file.py """
 
 
 def read_file(filename=""):
