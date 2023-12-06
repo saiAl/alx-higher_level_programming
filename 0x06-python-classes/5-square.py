@@ -15,7 +15,7 @@ class Square:
             size: private instance attribute.
         """
 
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
@@ -40,7 +40,7 @@ class Square:
         """
             my_print - print # symbol
         """
-        if self.__size < 0:
+        if self.__size == 0:
             print()
         else:
             for i in range(self.__size):
