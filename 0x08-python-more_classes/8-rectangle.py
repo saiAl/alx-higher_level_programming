@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" Module 7-rectangle.py based on 6-rectangle.py """
+""" Module 8-rectangle.py based on 7-rectangle.py """
 
 
 class Rectangle:
@@ -62,3 +62,13 @@ class Rectangle:
     def __del__(self):
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        if Rectangle.area(rect_1) == Rectangle.area(rect_2):
+            return rect_1
