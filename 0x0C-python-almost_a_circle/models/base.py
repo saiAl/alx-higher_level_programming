@@ -7,7 +7,7 @@
 """
 
 
-class Base():
+class Base:
     """
         The base class
 
