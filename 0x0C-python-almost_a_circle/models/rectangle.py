@@ -13,7 +13,7 @@ class Rectangle(Base):
         Class representing a rectangle with attributes for width, height,
         x coordinate, and y coordinate. It inherits from the Base class
         and automatically manages its id attribute.
-    """   
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
@@ -24,7 +24,8 @@ class Rectangle(Base):
                 height (int): height of the rectangle
                 x (int): the x coordinates
                 y (int): the y coordinates
-                id : unique identifier, inhertied form Base using super() method
+                id : unique identifier, inhertied form
+                    Base using super() method
         """
 
         self.width = width
@@ -37,11 +38,10 @@ class Rectangle(Base):
     def width(self):
         """ getter for the width attribute """
         return self.__width
-    
-    
+
     @width.setter
     def width(self, value):
-         """
+        """
             setter for the width attribute
 
             args:
@@ -50,20 +50,19 @@ class Rectangle(Base):
             raises:
             TypeError: if value not of type int
             ValueError: if value is less or equal to 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
 
-         """
-         if not isinstance(value, int):
-             raise TypeError("width must be an integer")
-         if value <= 0:
-             raise ValueError("width must be > 0")
+        self.__width = value
 
-         self.__width = value
-    
     @property
     def height(self):
         """ getter for the height attribute """
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         """
@@ -75,7 +74,6 @@ class Rectangle(Base):
             raises:
             TypeError: if value not of type int
             ValueError: if value is less or equal to 0.
-
          """
 
         if not isinstance(value, int):
@@ -84,13 +82,12 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
 
         self.__height = value
-    
 
     @property
     def x(self):
         """ getter for the x attribute """
         return self.__x
-    
+
     @x.setter
     def x(self, value):
         """
@@ -102,7 +99,6 @@ class Rectangle(Base):
             raises:
             TypeError: if value not of type int
             ValueError: if value is less then 0.
-
          """
 
         if not isinstance(value, int):
@@ -127,7 +123,6 @@ class Rectangle(Base):
             raises:
             TypeError: if value not of type int
             ValueError: if value is less then 0.
-
          """
 
         if not isinstance(value, int):
@@ -138,9 +133,9 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """ 
+        """
             public method that returns the area value
-            
+
             returns:
                 the area value of Rectangle instance.
         """
@@ -162,7 +157,8 @@ class Rectangle(Base):
             print("#" * self.__width)
 
     def __str__(self):
-        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id, self.__x,
+            self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """
@@ -181,7 +177,7 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 keys.append(key)
                 values.append(value)
-        
+
             for idx in range(len(keys)):
                 setattr(self,  keys[idx], values[idx])
 
