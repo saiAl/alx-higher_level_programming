@@ -1,15 +1,26 @@
 #!/usr/python3
 
-""" Document the module """
+"""
+    This module containing the Base class of all other classes in this
+    package, The goal of this class is to manage id attribute in all
+    the classes and to avoid duplicating the same code
+"""
 
 
 class Base():
-    """ Document the class """
+    """
+        The base class
+
+        Attributes:
+            __nb_object (int): private class attribute
+        Methods:
+            __init__(): class constructor to initilize Base instances with id.
+    """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Document the function """
+        """ Constructor for Base class """
         if id is not None:
             self.id = id
         else:
