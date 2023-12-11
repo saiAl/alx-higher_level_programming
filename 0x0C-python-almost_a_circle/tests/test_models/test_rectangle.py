@@ -81,6 +81,37 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             rectangle.y = -20
+    
+    def test_area(self):
+        """Test area calculation"""
+        self.assertEqual(self.rectangle.area(), 200)
+
+    def test_display(self):
+        """Test display of the rectangle"""
+        with capture_output() as output:
+            self.rectangle.display()
+        expected_output = "\n\n" + "#" * 10 + "\n" + "#" * 10
+        self.assertEqual(output.getvalue(), expected_output)
+
+    def test_str(self):
+        """Test string representation of the rectangle"""
+        expected_str = "[Rectangle] ({}) {}/{} - {}/{}".format(self.rectangle.id, self.rectangle.x, self.rectangle.y, self.rectangle.width, self.rectangle.height)
+        self.assertEqual(str(self.rectangle), expected_str)
+
+    def test_update_args(self):
+        """Test update method with positional arguments"""
+        self.rectangle.update(2, 30, 4, 5)
+        self.assertEqual(self.rectangle.id, 2)
+        self.assertEqual(self.rectangle.width, 30)
+        self.assertEqual(self.rectangle.height, 4)
+        self.assertEqual(self.rectangle.x, 5)
+        self.assertEqual(self.rectangle.y, 5)
+
+    def test_update_kwargs(self):
+        """Test update method with keyword arguments"""
+        self.rectangle.update(height=35, y=15)
+        self.assertEqual(self.rectangle.height, 35)
+        self.assertEqual(self.rectangle.y, 15)
 
 if __name__ == '__main__':
     unittest.main()
