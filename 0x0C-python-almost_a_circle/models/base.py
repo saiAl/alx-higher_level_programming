@@ -12,9 +12,14 @@ class Base():
         The base class
 
         Attributes:
-            __nb_object (int): private class attribute
+            __nb_object (int): his private class attribute
+                keeps track of the total number of created Base objects.
         Methods:
-            __init__(): class constructor to initilize Base instances with id.
+            __init__ method:
+                if an id argument is provided, it's assigned
+                    to the public instance attribute self.id.
+                Otherwise, __nb_objects is incremented and the
+                    new value is assigned to self.id.
     """
 
     __nb_objects = 0
