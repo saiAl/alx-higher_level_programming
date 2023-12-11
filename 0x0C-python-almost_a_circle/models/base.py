@@ -2,8 +2,8 @@
 
 """
     This module containing the Base class of all other classes in this
-    package, The goal of this class is to manage id attribute in all
-    the classes and to avoid duplicating the same code
+        package, The goal of this class is to manage id attribute in all
+        the classes and to avoid duplicating the same code
 """
 
 
