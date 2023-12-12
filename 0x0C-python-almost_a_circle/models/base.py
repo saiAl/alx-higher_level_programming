@@ -37,7 +37,7 @@ class Base:
         """Document this static method """
         import json
 
-        if list_dictionaries:
-            return json.dumps(list_dictionaries)
-        else:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return None
+        else:
+            return json.dumps(list_dictionaries)
