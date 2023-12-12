@@ -140,7 +140,7 @@ class Rectangle(Base):
                 the area value of Rectangle instance.
         """
 
-        return (self.__width * self.__height)
+        return (self.width * self.height)
 
     def display(self):
         """
@@ -150,11 +150,11 @@ class Rectangle(Base):
         for j in range(self.__y):
             print()
 
-        for i in range(self.__height):
+        for i in range(self.height):
             if self.__x > 0:
                 for j in range(self.__x):
                     print(' ', end='')
-            print("#" * self.__width)
+            print("#" * self.width)
 
     def __str__(self):
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
