@@ -1,4 +1,4 @@
-#!/usr/python3
+#!/usr/bin/python3
 
 """
     This module containing the Base class of all other classes in this
