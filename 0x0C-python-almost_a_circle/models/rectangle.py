@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
     This module defines the Rectangle class, which inherits from the Base
         class and represents a rectangle with attributes for width, height, x
@@ -158,17 +159,17 @@ class Rectangle(Base):
             print("#" * self.width)
 
     def __str__(self):
-       """
+        """
             a special method, defines how a Square object
-            will be converted into a string when directly
-            printed or used in string formatting.
-
+                will be converted into a string when directly
+                printed or used in string formatting.
             returns:
                 a string representation
-       """
-       return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
-                    self.id, self.__x, self.__y, self.__width, self.__height
-                )
+        """
+
+    return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height
+            )
 
     def update(self, *args, **kwargs):
         """
