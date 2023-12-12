@@ -184,4 +184,20 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ Document this method """
-        return self.__dict__
+
+        attr = dict()
+        for key, value in self.__dict__.items():
+            match key:
+                case "_Rectangle__width":
+                    attr.update({"width": value})
+                case "_Rectangle__height":
+                    attr.update({"height": value})
+                case "_Rectangle__x":
+                    attr.update({"x": value})
+                case "_Rectangle__y":
+                    attr.update({"y": value})
+                case "id":
+                    attr.update({"id": value})
+
+
+        return attr
