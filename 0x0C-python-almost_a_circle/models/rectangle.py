@@ -183,21 +183,23 @@ class Rectangle(Base):
                 setattr(self,  keys[idx], values[idx])
 
     def to_dictionary(self):
-        """ Document this method """
+        """
+            converts the Square object into a Python dictionary
+                containing its key-value pairs
+        """
 
-        attr = dict()
+        attrs = dict()
         for key, value in self.__dict__.items():
             match key:
                 case "_Rectangle__width":
-                    attr.update({"width": value})
+                    attrs.update({"width": value})
                 case "_Rectangle__height":
-                    attr.update({"height": value})
+                    attrs.update({"height": value})
                 case "_Rectangle__x":
-                    attr.update({"x": value})
+                    attrs.update({"x": value})
                 case "_Rectangle__y":
-                    attr.update({"y": value})
+                    attrs.update({"y": value})
                 case "id":
-                    attr.update({"id": value})
+                    attrs.update({"id": value})
 
-
-        return attr
+        return attrs
