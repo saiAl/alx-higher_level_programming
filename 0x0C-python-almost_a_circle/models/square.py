@@ -39,15 +39,15 @@ class Square(Rectangle):
         self.size = size
 
     @property
-    def width(self):
+    def size(self):
         """
             getter returns the current value of the
                 Square's size attribute
         """
         return self.__size
 
-    @width.setter
-    def width(self, value):
+    @size.setter
+    def size(self, value):
         """
             setter to update and validate the Square's size attribute
 
@@ -63,33 +63,6 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
 
         self.__size = value
-
-    @property
-    def height(self):
-        """
-            getter returns the current value of the
-                Square's size attribute
-        """
-        return self.__size
-
-    @height.setter
-    def height(self, value):
-        """
-            setter to update and validate the Square's size attribute
-
-            args:
-                value (int): the new size value
-            raises:
-                TypeError: if value not of type int
-                ValueError: if value less then 0
-        """
-
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
-
-        self.__size= value
 
     def update(self, *args, **kwargs):
         """
@@ -115,3 +88,4 @@ class Square(Rectangle):
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(
                 self.id, self.x, self.y, self.size
                 )
+
