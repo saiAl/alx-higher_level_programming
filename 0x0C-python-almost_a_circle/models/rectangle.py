@@ -110,6 +110,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """ getter for the y attribute """
         return self.__y
 
     @y.setter
@@ -157,6 +158,14 @@ class Rectangle(Base):
             print("#" * self.width)
 
     def __str__(self):
+       """
+            a special method, defines how a Square object
+            will be converted into a string when directly
+            printed or used in string formatting.
+
+            returns:
+                a string representation
+       """
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
                     self.id, self.__x, self.__y, self.__width, self.__height
                 )
@@ -186,6 +195,8 @@ class Rectangle(Base):
         """
             converts the Square object into a Python dictionary
                 containing its key-value pairs
+            returns:
+                a dictionary containing key-value pairs
         """
 
         attrs = dict()
