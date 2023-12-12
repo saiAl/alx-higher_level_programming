@@ -93,7 +93,8 @@ class Square(Rectangle):
         """
             converts the Square object into a Python dictionary
                 containing its key-value pairs
-            returns:
+
+            Returns:
                 a dictionary containing key-value pairs
         """
 
