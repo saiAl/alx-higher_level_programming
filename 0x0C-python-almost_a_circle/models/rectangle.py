@@ -18,17 +18,18 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
-            constructor for Rectangle class
+        Args:
+            self (object) : Argument
+            width : Argument
+            height : Argument
+            x : Argument
+                (default is 0)
+            y : Argument
+                (default is 0)
+            id : Argument
+                (default is None)
 
-            args:
-                width (int): width of the rectangle
-                height (int): height of the rectangle
-                x (int): the x coordinates
-                y (int): the y coordinates
-                id : unique identifier, inhertied form
-                    Base using super() method
         """
-
         self.width = width
         self.height = height
         self.x = x
@@ -37,20 +38,20 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """ getter for the width attribute """
+        """
+        Args:
+            self (object) : Argument
+
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-            setter for the width attribute
+        Args:
+            self (object) : Argument
+            value : Argument
 
-            args:
-                value (int): the new value of width
-
-            raises:
-            TypeError: if value not of type int
-            ValueError: if value is less or equal to 0.
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -61,22 +62,21 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """ getter for the height attribute """
+        """
+        Args:
+            self (object) : Argument
+
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
-            setter for the height attribute
+        Args:
+            self (object) : Argument
+            value : Argument
 
-            args:
-                value (int): the new value of height
-
-            raises:
-            TypeError: if value not of type int
-            ValueError: if value is less or equal to 0.
-         """
-
+        """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -86,22 +86,21 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """ getter for the x attribute """
+        """
+        Args:
+            self (object) : Argument
+
+        """
         return self.__x
 
     @x.setter
     def x(self, value):
         """
-            setter for the x attribute
+        Args:
+            self (object) : Argument
+            value : Argument
 
-            args:
-                value (int): the new value of x
-
-            raises:
-            TypeError: if value not of type int
-            ValueError: if value is less then 0.
-         """
-
+        """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -111,22 +110,21 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """ getter for the y attribute """
+        """
+        Args:
+            self (object) : Argument
+
+        """
         return self.__y
 
     @y.setter
     def y(self, value):
         """
-            setter for the y attribute
+        Args:
+            self (object) : Argument
+            value : Argument
 
-            args:
-                value (int): the new value of y
-
-            raises:
-            TypeError: if value not of type int
-            ValueError: if value is less then 0.
-         """
-
+        """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -136,18 +134,17 @@ class Rectangle(Base):
 
     def area(self):
         """
-            public method that returns the area value
+        Args:
+            self (object) : Argument
 
-            returns:
-                the area value of Rectangle instance.
         """
-
-        return (self.width * self.height)
+        return self.width * self.height
 
     def display(self):
         """
-            public method that prints in stdout the rectangle instance
-                with character #
+        Args:
+            self (object) : Argument
+
         """
         for j in range(self.__y):
             print()
@@ -160,24 +157,21 @@ class Rectangle(Base):
 
     def __str__(self):
         """
-            a special method, defines how a Square object
-                will be converted into a string when directly
-                printed or used in string formatting.
-            returns:
-                a string representation
-        """
+        Args:
+            self (object) : Argument
 
-    return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+        """
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             self.id, self.__x, self.__y, self.__width, self.__height
             )
 
     def update(self, *args, **kwargs):
         """
-            public method that assigns an argument to each attribute
+        Args:
+            self (object) : Argument
+            args : Variadic arguments
+            kwargs : Keyword arguments
 
-            args:
-                args: a positional argument
-                kwargs: a keyword argument
         """
         if args:
             for idx, arg in enumerate(args):
@@ -194,12 +188,10 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """
-            converts the Square object into a Python dictionary
-                containing its key-value pairs
-            returns:
-                a dictionary containing key-value pairs
-        """
+        Args:
+            self (object) : Argument
 
+        """
         attrs = dict()
         for key, value in self.__dict__.items():
             match key:
