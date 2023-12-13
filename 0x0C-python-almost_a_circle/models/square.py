@@ -98,24 +98,4 @@ class Square(Rectangle):
                 self.id, self.x, self.y, self.size
                 )
 
-    def to_dictionary(self):
-        """
-        Args:
-            self (object) : Argument
 
-        """
-        attrs = dict()
-        for key, value in self.__dict__.items():
-            match key:
-                case "_Rectangle__width":
-                    attrs.update({"width": value})
-                case "_Rectangle__height":
-                    attrs.update({"height": value})
-                case "_Rectangle__x":
-                    attrs.update({"x": value})
-                case "_Rectangle__y":
-                    attrs.update({"y": value})
-                case "id":
-                    attrs.update({"id": value})
-
-        return attrs
