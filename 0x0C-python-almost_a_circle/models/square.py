@@ -34,28 +34,37 @@ class Square(Rectangle):
     """
 
     def __init__(self, size, x=0, y=0, id=None):
-        """ Square's class constructor """
+        """
+        Args:
+            self (object) : Argument
+            size : Argument
+            x : Argument
+                (default is 0)
+            y : Argument
+                (default is 0)
+            id : Argument
+                (default is None)
+
+        """
         super().__init__(width=size, height=size, x=x, y=y, id=id)
         self.size = size
 
     @property
     def size(self):
         """
-            getter returns the current value of the
-                Square's size attribute
+        Args:
+            self (object) : Argument
+
         """
         return self.__size
 
     @size.setter
     def size(self, value):
         """
-            setter to update and validate the Square's size attribute
+        Args:
+            self (object) : Argument
+            value : Argument
 
-            args:
-                value (int): the new size value
-            raises:
-                TypeError: if value not of type int
-                ValueError: if value less then 0
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -66,11 +75,11 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """
-            public method that assigns an argument to each attribute
+        Args:
+            self (object) : Argument
+            args : Variadic arguments
+            kwargs : Keyword arguments
 
-            args:
-                args: a positional argument
-                kwargs: a keyword argument
         """
         if args:
             for idx, arg in enumerate(args):
@@ -81,9 +90,9 @@ class Square(Rectangle):
 
     def __str__(self):
         """
-            method to returns a string representation of the
-                Square object, including its id, x and y
-                coordinates, and size.
+        Args:
+            self (object) : Argument
+
         """
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(
                 self.id, self.x, self.y, self.size
@@ -91,13 +100,10 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """
-            converts the Square object into a Python dictionary
-                containing its key-value pairs
+        Args:
+            self (object) : Argument
 
-            Returns:
-                a dictionary containing key-value pairs
         """
-
         attrs = dict()
         for key, value in self.__dict__.items():
             match key:
