@@ -2,8 +2,8 @@
 
 """
     This module defines the Square class, which inherits
-        from the Rectangle class and represents a square with
-        attributes for size, x coordinate, y coordinate, and id.
+        from Rectangle and represents a square shape with
+        attributes for size, coordinates, and id.
 """
 from models.rectangle import Rectangle
 
@@ -35,15 +35,15 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """
-        Args:
-            self (object) : Argument
-            size : Argument
-            x : Argument
-                (default is 0)
-            y : Argument
-                (default is 0)
-            id : Argument
-                (default is None)
+            Args:
+                self (object) : refers to the class its self
+                size : size of the square
+                x : x coordinates
+                    (default is 0)
+                y : y coordinates
+                    (default is 0)
+                id : integer unique value for every instance
+                    (default is None)
 
         """
         super().__init__(width=size, height=size, x=x, y=y, id=id)
@@ -52,8 +52,8 @@ class Square(Rectangle):
     @property
     def size(self):
         """
-        Args:
-            self (object) : Argument
+            Args:
+                self (object) : Argument
 
         """
         return self.__size
@@ -98,4 +98,24 @@ class Square(Rectangle):
                 self.id, self.x, self.y, self.size
                 )
 
+    def to_dictionary(self):
+        """
+        Args:
+            self (object) : Argument
 
+        """
+        attrs = dict()
+        for key, value in self.__dict__.items():
+            match key:
+                case "_Rectangle__width":
+                    attrs.update({"width": value})
+                case "_Rectangle__height":
+                    attrs.update({"height": value})
+                case "_Rectangle__x":
+                    attrs.update({"x": value})
+                case "_Rectangle__y":
+                    attrs.update({"y": value})
+                case "id":
+                    attrs.update({"id": value})
+
+        return attrs
