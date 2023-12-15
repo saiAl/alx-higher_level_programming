@@ -51,19 +51,21 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """
-            Args:
-                self (object) : Argument
-
-        """
+        """ Getter for the size attribute. """
         return self.__size
 
     @size.setter
     def size(self, value):
         """
-        Args:
-            self (object) : Argument
-            value : Argument
+            Setter for the size attribute, to update the square's
+                size by validating the provided value.
+
+            Args:
+                value : new size value
+            Raises:
+                TypeError if the provided value is not an integer.
+                ValueError if the provided value is
+                    less than or equal to 0.
 
         """
         if not isinstance(value, int):
@@ -75,10 +77,11 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """
-        Args:
-            self (object) : Argument
-            args : Variadic arguments
-            kwargs : Keyword arguments
+            Updates the square's attributes.
+
+            Args:
+                args : Variadic arguments
+                kwargs : Keyword arguments
 
         """
         if args:
@@ -89,19 +92,18 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def __str__(self):
-        """
-        Args:
-            self (object) : Argument
-
-        """
+        """ Returns a string representation of the square. """
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(
                 self.id, self.x, self.y, self.size
                 )
 
     def to_dictionary(self):
         """
-        Args:
-            self (object) : Argument
+            Creates a dictionary representation of the square.
+
+            Returns:
+                attrs: a dictionary includes the square's id,
+                    size, x-coordinate,y-coordinate.
 
         """
         attrs = dict()
