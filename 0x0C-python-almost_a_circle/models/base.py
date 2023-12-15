@@ -5,6 +5,7 @@
         package, The goal of this class is to manage id attribute in all
         the classes and to avoid duplicating the same code
 """
+import json
 
 
 class Base:
@@ -35,9 +36,37 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """Document this static method """
-        import json
 
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """
+            writes the JSON string representation of list_objs to a file
+
+            Args:
+                list_objs: is a list of instances who inherits of Base
+        """
+        file_name = "{:s}.json".format(cls.__name__)
+        with open(file_name, 'w', encoding="utf-8") as f:
+            if list_objs is None or len(list_objs) == 0:
+                f.close()
+            else:
+                dict_objs = dict()
+
+                for obj in list_objs:
+                    for key, value in obj.__dict__.items():
+                        if len(key) <= 2:
+                            dict_objs.update({key: value})
+                        elif f'_{cls.__name__}__{key[3 + len(cls.__name__):]}' in key:
+                            dict_objs.update(
+                                    {key[3 + len(cls.__name__):]: value}
+                                    )
+                        else:
+                            dict_objs.update({key[12:]: value})
+
+                data = cls.to_json_string([dict_objs for obj in list_objs])
+                print(data)
