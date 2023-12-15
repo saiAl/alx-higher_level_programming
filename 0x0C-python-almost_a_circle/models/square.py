@@ -111,6 +111,11 @@ class Square(Rectangle):
         for key, value in self.__dict__.items():
             if len(key) <= 2:
                 attrs.update({key: value})
+            elif key[9:] == "size":
+                attrs.update({key[9:]: value})
             else:
-                attrs.update({key[12:]: value})
+                if key[12:] == "width" or key[12:] == "height":
+                    continue
+                else:
+                    attrs.update({key[12:]: value})
         return attrs
