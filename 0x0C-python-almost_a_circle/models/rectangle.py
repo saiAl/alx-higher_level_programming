@@ -186,24 +186,17 @@ class Rectangle(Base):
             for idx in range(len(keys)):
                 setattr(self,  keys[idx], values[idx])
 
-'''    def to_dictionary(self):
+    def to_dictionary(self):
         """
-        Args:
-            self (object) : Argument
+            Creates a dictionary representation of the square.
+
+            Returns:
+                attrs: a dictionary includes the square's id,
+                    size, x-coordinate,y-coordinate.
 
         """
         attrs = dict()
         for key, value in self.__dict__.items():
-            match key:
-                case "_Rectangle__width":
-                    attrs.update({"width": value})
-                case "_Rectangle__height":
-                    attrs.update({"height": value})
-                case "_Rectangle__x":
-                    attrs.update({"x": value})
-                case "_Rectangle__y":
-                    attrs.update({"y": value})
-                case "id":
-                    attrs.update({"id": value})
+            attrs.update({key[11:], value})
 
-        return attrs'''
+        return attrs
