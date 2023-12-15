@@ -107,7 +107,10 @@ class Square(Rectangle):
 
         """
         attrs = dict()
-        for key, value in self.__dict__.items():
-            attrs.update({key[11:], value})
 
+        for key, value in self.__dict__.items():
+            if len(key) <= 2:
+                attrs.update({key: value})
+            else:
+                attrs.update({key[12:]: value})
         return attrs

@@ -18,18 +18,17 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
-        Args:
-            self (object) : Argument
-            width : Argument
-            height : Argument
-            x : Argument
-                (default is 0)
-            y : Argument
-                (default is 0)
-            id : Argument
-                (default is None)
-
-        """
+            Constructor
+            Args:
+                width : width of the rectangle
+                height : height of the rectangle
+                x : x coordinate
+                    (default is 0)
+                y : y coordinate
+                    (default is 0)
+                id : instances IDs
+                    (default is None)
+            """
         self.width = width
         self.height = height
         self.x = x
@@ -38,20 +37,18 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """
-        Args:
-            self (object) : Argument
-
-        """
+        """ getter for width """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-        Args:
-            self (object) : Argument
-            value : Argument
-
+            setter for width
+            Args:
+                value: the new value to assign
+            Rasies:
+                TypeError: width must be an integer
+                ValueError: width must be > 0
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -62,20 +59,18 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """
-        Args:
-            self (object) : Argument
-
-        """
+        """ getter for height """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
-        Args:
-            self (object) : Argument
-            value : Argument
-
+            setter for width
+            Args:
+                value: the new value to assign
+            Rasies:
+                TypeError: width must be an integer
+                ValueError: width must be > 0
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -86,20 +81,19 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """
-        Args:
-            self (object) : Argument
-
-        """
+        """ getter for x """
         return self.__x
 
     @x.setter
     def x(self, value):
         """
-        Args:
-            self (object) : Argument
-            value : Argument
+            setter for x
 
+            Args:
+                value: the new value to assign
+            Rasies:
+                TypeError: x must be an integer
+                ValueError: x must be > 0
         """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
@@ -110,20 +104,19 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """
-        Args:
-            self (object) : Argument
-
-        """
+        """ getter for y """
         return self.__y
 
     @y.setter
     def y(self, value):
         """
-        Args:
-            self (object) : Argument
-            value : Argument
+            setter for x
 
+            Args:
+                value: the new value to assign
+            Rasies:
+                TypeError: x must be an integer
+                ValueError: x must be > 0
         """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
@@ -134,18 +127,15 @@ class Rectangle(Base):
 
     def area(self):
         """
-        Args:
-            self (object) : Argument
+            Calculate the rectangle area
 
+            Returns:
+                (width * height)
         """
         return self.width * self.height
 
     def display(self):
-        """
-        Args:
-            self (object) : Argument
-
-        """
+        """ print hashtags to stdout """
         for j in range(self.__y):
             print()
 
@@ -157,9 +147,10 @@ class Rectangle(Base):
 
     def __str__(self):
         """
-        Args:
-            self (object) : Argument
+            special method that returns special string
 
+            Returns:
+                a string contain informations about the rectangle
         """
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             self.id, self.__x, self.__y, self.__width, self.__height
@@ -167,10 +158,11 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """
-        Args:
-            self (object) : Argument
-            args : Variadic arguments
-            kwargs : Keyword arguments
+            update the attributes
+
+            Args:
+                args : Variadic arguments
+                kwargs : Keyword arguments
 
         """
         if args:
@@ -188,7 +180,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """
-            Creates a dictionary representation of the square.
+            Creates a dictionary representation of the rectange.
 
             Returns:
                 attrs: a dictionary includes the square's id,
@@ -196,7 +188,10 @@ class Rectangle(Base):
 
         """
         attrs = dict()
-        for key, value in self.__dict__.items():
-            attrs.update({key[11:], value})
 
+        for key, value in self.__dict__.items():
+            if len(key) <= 2:
+                attrs.update({key: value})
+            else:
+                attrs.update({key[12:]: value})
         return attrs
