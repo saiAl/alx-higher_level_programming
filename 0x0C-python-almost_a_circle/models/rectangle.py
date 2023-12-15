@@ -186,7 +186,7 @@ class Rectangle(Base):
             for idx in range(len(keys)):
                 setattr(self,  keys[idx], values[idx])
 
-    def to_dictionary(self):
+'''    def to_dictionary(self):
         """
         Args:
             self (object) : Argument
@@ -206,4 +206,4 @@ class Rectangle(Base):
                 case "id":
                     attrs.update({"id": value})
 
-        return attrs
+        return attrs'''
