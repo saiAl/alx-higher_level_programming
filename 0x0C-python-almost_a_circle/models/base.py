@@ -61,7 +61,10 @@ class Base:
                     for key, value in obj.__dict__.items():
                         if len(key) <= 2:
                             dict_objs.update({key: value})
-                        elif f'_{cls.__name__}__{key[3 + len(cls.__name__):]}' in key:
+                        elif '_{:s}__{:s}[3 + len({:s}):]'.format(
+                                cls.__name__, key, cls.__name__
+                                ) in key:
+
                             dict_objs.update(
                                     {key[3 + len(cls.__name__):]: value}
                                     )
@@ -69,4 +72,4 @@ class Base:
                             dict_objs.update({key[12:]: value})
 
                 data = cls.to_json_string([dict_objs for obj in list_objs])
-                print(data)
+                f.write(data)
