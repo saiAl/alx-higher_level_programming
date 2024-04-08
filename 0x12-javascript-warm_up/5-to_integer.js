@@ -9,4 +9,3 @@ if (isNaN(converted)) {
 } else {
   console.log(`My number: ${converted}`);
 }
-
