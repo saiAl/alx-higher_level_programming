@@ -10,8 +10,7 @@ class Rectangle {
 
   print () {
     let x = '';
-    let y = '';
-    let arr = [];
+    const arr = [];
 
     for (let idx = 0; idx < this.width; idx++) {
       x += 'X';
@@ -20,16 +19,16 @@ class Rectangle {
       arr.push(x);
     }
     arr.forEach((value) => {
-      console.log(value)
+      console.log(value);
     });
   }
 
   rotate () {
-    let tmp = this.width;
+    const tmp = this.width;
     this.width = this.height;
     this.height = tmp;
   }
-  
+
   double () {
     this.width = this.width * 2;
     this.height = this.height * 2;
