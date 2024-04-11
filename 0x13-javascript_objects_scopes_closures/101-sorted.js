@@ -10,3 +10,5 @@ Object.entries(dict).forEach(([k, v]) => {
   }
   newDict[v].push(k);
 });
+
+console.log(newDict);
