@@ -26,11 +26,14 @@ def all_cities():
                     if (r[2] == state_name):
                         state_list.append(r[1])
 
-                for idx, value in enumerate(state_list):
-                    if idx < (len(state_list) - 1):
-                        print(value, end=', ')
-                    else:
-                        print(value)
+                if (len(state_list) == 0):
+                    print()
+                else:
+                    for idx, value in enumerate(state_list):
+                        if idx < (len(state_list) - 1):
+                            print(value, end=', ')
+                        else:
+                            print(value)
     except Exception as err:
         print(err)
         exit(1)
