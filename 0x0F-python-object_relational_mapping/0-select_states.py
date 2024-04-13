@@ -23,10 +23,10 @@ def records():
     cur.execute("SELECT id, name FROM states ORDER BY id ASC;")
     for r in cur.fetchall():
         print(r)
-    
+
     cur.close()
     db.close()
 
 
-#if '__name__' == '__main__':
-records()
+if '__name__' == '__main__':
+    records()
