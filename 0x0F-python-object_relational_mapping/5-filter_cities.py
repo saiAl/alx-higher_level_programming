@@ -23,11 +23,10 @@ def all_cities():
                         """, (state_name,))
 
                 print(", ".join([s[0] for s in cur.fetchall()]))
-
     except Exception as err:
         print(err)
         exit(1)
 
 
-#if '__name__' == '__main__':
-all_cities()
+if '__name__' == '__main__':
+    all_cities()
