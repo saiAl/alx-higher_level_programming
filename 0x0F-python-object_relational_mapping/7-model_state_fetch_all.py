@@ -6,11 +6,9 @@ from sqlalchemy.orm import sessionmaker
 import sys
 
 
-def list_states():
-    """ lists all State objects from the database """
-
+if '__name__' == '__main__':
     engine = create_engine(
-            "mysql+mysqldb://{}:{}@localhost/{}".format(
+            "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
                 sys.argv[1], sys.argv[2], sys.argv[3])
             )
 
@@ -19,7 +17,3 @@ def list_states():
 
     for col in session.query(State).order_by(State.id):
         print("{}: {}".format(col.id, col.name))
-
-
-if '__name__' == '__main__':
-    list_states()
