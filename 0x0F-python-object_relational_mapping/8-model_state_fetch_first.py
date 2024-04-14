@@ -24,6 +24,6 @@ if '__name__' == '__main__':
         state_name = f"{state.first().id}: {state.first().name}"
         print(state_name)
     else:
-        pass
+        print("Nothing")
 
     session.close()
