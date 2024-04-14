@@ -4,9 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 
 
-class Base(declarative_base):
-    """class which maintains a catalog"""
-    pass
+Base = declarative_base
 
 
 class State(Base):
