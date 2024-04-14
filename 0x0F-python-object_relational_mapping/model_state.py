@@ -8,11 +8,18 @@ Base = declarative_base()
 
 
 class State(Base):
-    """ class to map """
-    __tablename__ = "states"
+    """
+        class that represents state table
 
+        Attributes:
+            id (int): a unique number for each state.
+            name (str): a string represents of the state.
+
+    """
+
+    __tablename__ = "states"
     id = Column(
-            Integer, primary_key=True, autoincrement=True, nullable=False
-            unique=True
+            'id', Integer, primary_key=True,
+            autoincrement=True, nullable=False, unique=True
             )
-    name = Column(String(128), nullable=False)
+    name = Column('name', String(128), nullable=False)
