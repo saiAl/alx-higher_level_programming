@@ -21,5 +21,5 @@ def filter_by_usr_input_safe():
         print(e)
 
 
-if '__name__' == '__main__':
+if __name__ == '__main__':
     filter_by_usr_input_safe()
