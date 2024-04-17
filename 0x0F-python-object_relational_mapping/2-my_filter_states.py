@@ -6,8 +6,8 @@ import MySQLdb
 
 def filter_by_usr_input():
     """ script that takes in an argument and displays all values """
-    usr_input = sys.argv[4]
     try:
+        usr_input = sys.argv[4]
         with MySQLdb.connect(
             "localhost", sys.argv[1], sys.argv[2], sys.argv[3], port=3306
                 ) as db:
@@ -21,5 +21,5 @@ def filter_by_usr_input():
         print(e)
 
 
-if '__name__' == '__main__':
+if __name__ == '__main__':
     filter_by_usr_input()
