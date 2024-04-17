@@ -28,5 +28,5 @@ def all_cities():
         exit(1)
 
 
-if '__name__' == '__main__':
+if __name__ == '__main__':
     all_cities()
