@@ -22,4 +22,4 @@ if __name__ == '__main__':
     for state in states:
         print(f"{state[0]}: {state[1]}")
 
-session.close()
+    session.close()
