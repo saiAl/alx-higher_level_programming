@@ -21,6 +21,6 @@ if __name__ == '__main__':
                     State.name.like("%a%")
                     ).order_by(State.id)
     for state in states:
-        print(state)
+        print(f"{state[0]}: {state[1]}")
 
     session.close()
