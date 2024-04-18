@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" 10. Get a state """
-from sqlalchemy import create_engine
+""" 11. Add a new state """
+from sqlalchemy import create_engine, insert
 from sqlalchemy.engine import URL
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
@@ -11,7 +11,6 @@ if __name__ == '__main__':
     usrname = sys.argv[1]
     passwd = sys.argv[2]
     db = sys.argv[3]
-    usr_input = sys.argv[4]
 
     url = URL.create(
             "mysql+mysqldb", usrname,
@@ -24,17 +23,12 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(
-            State.id, State.name
-            ).order_by(State.id)
+    new_state = State(name="Louisiana")
+    session.add(new_state)
+    session.commit()
 
-    output = None
+    states = session.query(State.id, State.name).order_by(State.id)
     for state in states:
-        if state[1] == usr_input:
-            output = state[0]
-
-    if output == None:
-        output = "Not found"
-    print(output)
+        print(f"{state[0]: state[1]}")
 
     session.close()
