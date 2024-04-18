@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-""" 9. Contains `a` """
+""" 9. Contains a """
 from model_state import State, Base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import sys
 
 
-def contain_a():
-    """ script that lists all State objects that contain the letter a """
+if __name__ = '__main__':
     engine = create_engine(
             "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
                 sys.argv[1], sys.argv[2], sys.argv[3], pool_pre_ping=True)
@@ -25,7 +24,3 @@ def contain_a():
         print(state)
 
     session.close()
-
-
-if __name__ = '__main__':
-    contain_a()
