@@ -33,7 +33,7 @@ if __name__ == '__main__':
         if state[1] == usr_input:
             output = state[0]
 
-    if output == None:
+    if output is None:
         output = "Not found"
     print(output)
 
