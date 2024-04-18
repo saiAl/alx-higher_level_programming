@@ -28,9 +28,10 @@ if __name__ == '__main__':
             State.id, State.name
             ).order_by(State.id)
 
+    output = None
     for state in states:
         if state[1] == usr_input:
-            print(state[0])
-            break
+            output = state[0]
 
+    print(output)
     session.close()
