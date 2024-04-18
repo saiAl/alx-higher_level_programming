@@ -29,6 +29,7 @@ if __name__ == '__main__':
 
     states = session.query(State.id, State.name).order_by(State.id)
     for state in states:
-        print(f"{state[0]: state[1]}")
+        if state[1] == "Louisiana":
+            print(f"{state[0]}")
 
     session.close()
