@@ -6,6 +6,7 @@ const request = require('request');
 const fs = require('node:fs');
 
 request(argv[2], (err, response, body) => {
+  if (err) { return console.error(err); }
   fs.writeFile(argv[3], body, (err) => {
     if (err) { return console.error(err); }
   });
