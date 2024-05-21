@@ -14,7 +14,7 @@ request(argv[2], (err, response, body) => {
   for (let x = 0; x < obj.results.length; x++) {
     const array = obj.results[x].characters;
     array.forEach((str) => {
-      if (str.match(reg) === id) { number++; }
+      if (Number(str.match(reg)[0]) === id) { number++; }
     });
   }
 
